@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .cart img {
+      height: 30px;
+      margin-left: 180px;
+      margin-top: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .cart span {
+      display: flex;
+      align-items: center;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 5px;
+    }
+
+    .categories {
+      background-color: #444;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+
+    .categories a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin: 1rem;
+      text-align: center;
+      max-width: 300px;
+      height: 360px;
+    }
+
+    .product img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+
+    .product h2 {
+      margin-top: 10px; /* Add margin to separate image and title */
+    }
+
+    .top-selling-heading {
+      font-family: 'Arial Black', sans-serif;
+      font-size: 28px;
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #cbcbcb;
+    }
+
+    header hr {
+      border: none;
+      border-top: 1px solid #ffffff;
+      margin: 10px auto;
+      width: 80%;
+    }
+
+    .search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  width: 70%;
+}
+
+.search-bar button {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #555;
+}
+
+/* Add this to your existing styles */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    }
+
+  </style>
+  <title>Pears Online Store</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome</h1>
+    <hr>
+    <nav>
+      <div class="logo">
+        <img src="https://pbs.twimg.com/media/CYrA2z3WQAAOZDe.png" alt="Pears Logo">
+      </div>
+      <ul class="nav-center">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="cart">
+        <img src="data:image/png;base64,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" alt="Cart Icon">
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+            <button class="search-button">Search</button>
+          </div>
+          
+
+      </div>
+    </nav>
+  </header>
+
+  <section class="categories">
+    <a href="#">Home Gadgets</a>
+    <a href="#">Accessories</a>
+    <a href="#">uPhone</a>
+    <a href="#">uPad</a>
+    <a href="#">uPods</a>
+    <!-- Add more categories as needed -->
+  </section>
+  <br><br>
+  <h2 class="top-selling-heading">Top Selling Products</h2>
+  <section class="products">
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVqgXwKorGMjXG94SWB2Uq9RxmL1i9DwnYUg&usqp=CAU" alt="Product 1">
+      <h3>uPhone Gen 200</h3>
+      <p>Price: $1999.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://ih1.redbubble.net/image.638026347.2533/mwo,x1000,ipad_2_snap-pad,750x1000,f8f8f8.u5.jpg" alt="Product 2">
+      <h3>uPad</h3>
+      <p>Price: $2699.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://e-hallmark.com/cdn/shop/products/S148cf4ba10bf4ed1a719dc4e21efc488o_grande.jpg?v=1663244832" alt="Product 3">
+      <h3>uPods</h3>
+      <p>Price: $499.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Pears Online Store. All rights reserved.</p> 
+    <p>You're not just making purchases; you're making a difference.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const addToCartButtons = document.querySelectorAll(".add-to-cart");
+      
+      addToCartButtons.forEach(button => {
+        button.addEventListener("click", addToCart);
+      });
+      
+      function addToCart() {
+        // Implement cart functionality here
+        alert("Item added to cart!");
+      }
+    });
+  </script>
+</body>
+</html>
