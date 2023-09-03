@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cyrus, Jit Young Tan - Personal Website</title>
+   <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <style>
     /* Reset some default browser styling */
     body, h1, h2, p {
@@ -41,9 +43,11 @@
     }
 
     .profile-box {
+      width: 100%;
       display: flex;
       align-items: center;
       margin-bottom: 2rem;
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdGiPHgtRJBz8XaFpCYU84u3h8D042gAEV6g&usqp=CAU);
     }
 
     .profile-box img {
@@ -51,14 +55,15 @@
       border-radius: 50%;
       margin-right: 1.5rem;
       border: 4px solid #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(237, 6, 6, 0.867);
     }
 
     .bio {
-      background-color: #fff;
+      color: #fff;
+      background-color: #000000;
       padding: 1.5rem;
       border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(242, 0, 0, 0.942);
     }
 
     .video-container {
@@ -90,8 +95,8 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      margin-top: 2rem;
-      margin-right: 2rem;
+      margin-top: 4rem;
+      width: 110%;
     }
 
     .about-section,
@@ -102,6 +107,7 @@
 
     /* Photo gallery styles */
     .photo-gallery {
+      width: 100px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -115,64 +121,283 @@
       border-radius: 8px;
     }
 
-    .photo img {
-      width: 100%;
-      height: 100%;
-      transition: transform 0.3s;
+    .carousel-inner .carousel-item img {
+      height: 500px;
+      max-width: 100%;
     }
+
+     /* Customized carousel item aspect ratio */
+    .custom-carousel-item {
+      padding-top: 42.85%; /* 21:9 aspect ratio */
+    }
+    
+     /* Control image dimensions */
+     .carousel-inner .carousel-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover; /*Maintain aspect ratio and cover the entire item*/
+    }
+
 
     .photo:hover img {
       transform: scale(1.1);
     }
 
+    /* Change the color of carousel navigation arrows to white */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+    background-color: rgb(255, 249, 249);
+    }
+
+    /* Change the color of the arrow icons themselves (optional) */
+    .carousel-control-prev-icon::before,
+    .carousel-control-next-icon::before {
+    content: '\2039'; /* Unicode code for left arrow (Previous) */
+    color: #020202; /* Arrow color */
+    font-size: 24px; /* Adjust the size as needed */
+    }
+
+    .carousel-control-next-icon::before {
+    content: '\203A'; /* Unicode code for right arrow (Next) */
+    }
+
+    /* Fixed height for Bootstrap cards */
+    .card {
+      height: 100%;
+    }
+
+    .card-img-top {
+  width: 100%; /* Set your desired width */
+  height: 100%; /* Set your desired height */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire card */
+}
+
+/* Add this CSS to your existing styles */
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add a glowing box shadow on hover */
+  transition: box-shadow 0.3s ease; /* Smooth transition for the glow effect */
+}
+
+/* Animation for scaling cards */
+.scale-up {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .scale-up:hover {
+    transform: scale(1.05); /* Adjust the scale factor as needed */
+  }
+
+/* Glow effect for the hovered card */
+.glow-on-hover {
+    transition: 0.3s;
+    filter: brightness(1); /* Initial brightness */
+  }
+
+  .glow-on-hover:hover {
+    filter: brightness(1.5); /* Adjust brightness to make it glow more */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Optional: Add a box shadow for the glow effect */
+  }
+
+  /* Translucency effect for other cards */
+  .translucent-card {
+    transition: 0.3s;
+  }
+
+  .glow-on-hover:hover ~ .translucent-card {
+    opacity: 0.6; /* Adjust opacity (0-1) to control translucency */
+  }
+
+  /* Custom CSS to set taller card height */
+.taller-card {
+  height: 150px; /* Adjust the height as needed */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire card */
+
+}
+
+/* Style the "Basketball" header */
+.basketball-header {
+  background-color: #000000; /* Change to your desired background color */
+  color: #FFFFFF; /* Change text color to white or a color that complements the background */
+  padding: 10px 20px; /* Add padding to make it visually appealing */
+  border-radius: 5px; /* Add rounded corners */
+  display: inline-block; /* Ensure the background color only covers the text */
+  font-family: 'Arial', sans-serif; /* Use Arial font or another preferred font */
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+
+
+  /* Style the "Soccer" header */
+#soccer h2 {
+  background-color: #020202; /* Change this to your desired background color */
+  color: #fff; /* Change text color to white or a color that complements the background */
+  padding: 10px 20px; /* Add some padding to make it visually appealing */
+  border-radius: 5px; /* Add rounded corners */
+  display: inline-block; /* Ensure the background color only covers the text */
+  font-family: 'Arial', sans-serif; /* Use Arial font or another preferred font */
+  font-size: 24px; /* Increase the font size as needed */
+}
+
+    /* Initially hide the translucent cards */
+.translucent-card {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Show the cards and add a glow effect on hover */
+.translucent-card:hover {
+  opacity: 1;
+  filter: brightness(1.5); /* Adjust brightness to make it glow more */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Optional: Add a box shadow for the glow effect */
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <h1>Cyrus, Jit Young Tan</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About Me: F1 Enthusiast</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Cyrus Tan's Website</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#soccer">Soccer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#basketball">Basketball</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <header class="bg-dark">
+        <div class="container">
+          <h1 class="text-white">Cyrus, Jit Young Tan</h1>
+          <nav>
+            <ul class="nav">
+              <li class="nav-item"><a href="#about">About Me: F1 Enthusiast</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
   <!-- Combined container for about section and gallery -->
-  <div class="content-container">
-    <section class="about-section" id="about">
-      <div class="profile-box">
-        <img src="https://media.licdn.com/dms/image/D5603AQEEu-NWWC9_dg/profile-displayphoto-shrink_800_800/0/1678634523013?e=2147483647&v=beta&t=2ggMFhw5rYJ_-2ViMB_NinwCgINsVtf6eNaFEyNsCvc" alt="Cyrus Tan">
-        <div class="bio">
-        <h2>About Me</h2>
-        <p>+65 9223 1328 | jytan.2022@scis.smu.edu.sg | <a href="https://www.linkedin.com/in/cyrus-jit-young-tan">www.linkedin.com/in/cyrus-jit-young-tan</a></p>
-        <p>Education:</p>
-        <p>Bachelor of Science (Information Systems) - Singapore Management University (SMU)</p>
-        <ul>
-          <li>SMU EYE Investment Club: Analyst</li>
-          <li>SMU Metamorphosis 2023: Corporate Relations Executive</li>
-          <li>SMU .Hack: Member</li>
-          <li>SMU Whitehat Society: Member</li>
-          <li>SMU Business Intelligence & Analytics: Member</li>
-          <li>SMU AI: Member</li>
-          <li>SMU Athletics, Member</li>
-        </ul>
+  <div class="container mt-4">
+    <div class="content-container">
+      <!-- About section -->
+      <section class="about-section" id="about">
+        <div class="profile-box">
+          <img src="https://media.licdn.com/dms/image/D5603AQEEu-NWWC9_dg/profile-displayphoto-shrink_800_800/0/1678634523013?e=2147483647&v=beta&t=2ggMFhw5rYJ_-2ViMB_NinwCgINsVtf6eNaFEyNsCvc" alt="Cyrus Tan">
+          <div class="bio">
+            <h2>About Me</h2>
+            <p>+65 9223 1328 | jytan.2022@scis.smu.edu.sg | <a href="https://www.linkedin.com/in/cyrus-jit-young-tan">www.linkedin.com/in/cyrus-jit-young-tan</a></p>
+            <p>Education:</p>
+            <p>Bachelor of Science (Information Systems) - Singapore Management University (SMU)</p>
+            <ul>
+              <li>SMU EYE Investment Club: Analyst</li>
+              <li>SMU Metamorphosis 2023: Corporate Relations Executive</li>
+              <li>SMU .Hack: Member</li>
+              <li>SMU Whitehat Society: Member</li>
+              <li>SMU Business Intelligence & Analytics: Member</li>
+              <li>SMU AI: Member</li>
+              <li>SMU Athletics, Member</li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
   <!-- Gallery positioned at the top right -->
-    <div class="photo-gallery">
-      <div class="photo">
-        <img src="https://pbs.twimg.com/media/FcEcfXuXkAA-9_R.jpg:large" alt="Photo 1">
+  <div class="photo-gallery">
+    <!-- First Photo Carousel -->
+    <div class="photo">
+      <div id="photoCarousel1" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <a class="carousel-control-prev" href="#photoCarousel1" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#photoCarousel1" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+              
+          <div class="carousel-item active">
+            <img src="https://pbs.twimg.com/media/FcEcfXuXkAA-9_R.jpg:large" alt="Photo 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.motor1.com/images/mgl/7z7zJ/s3/ferrari-fans-and-flags.jpg" alt="Photo 1-2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.f1-fansite.com/wp-content/uploads/2022/04/220065-emilia-romagna-gp-2022-race.jpg" alt="Photo 1-3">
+          </div>
+        </div>
       </div>
-      <div class="photo">
-        <img src="https://pbs.twimg.com/media/Fb0ZNteXEAARPOi.jpg:large" alt="Photo 2">
+    </div>
+
+
+    <!-- Second Photo Carousel -->
+    <div class="photo">
+        <div id="photoCarousel2" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <a class="carousel-control-prev" href="#photoCarousel2" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#photoCarousel2" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+              
+            <div class="carousel-item active">
+              <img src="https://pbs.twimg.com/media/Fb0ZNteXEAARPOi.jpg:large" alt="Photo 2">
+            </div>
+            <div class="carousel-item">
+              <img src="https://media.formula1.com/image/upload/content/dam/fom-website/manual/Misc/2022manual/2022Races/MexicoCityGP/Postrace/GettyImages-1437772518.jpg" alt="Photo 2-2">
+            </div>
+            <div class="carousel-item">
+              <img src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.eurosport.com/2023/07/31/3754905-76388028-2560-1440.jpg" alt="Photo 2-3">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="photo">
-        <img src="https://w0.peakpx.com/wallpaper/221/507/HD-wallpaper-lewis-hamilton-cloud-sky.jpg" alt="Photo 3">
+
+    <!-- Third Photo Carousel -->
+    <div class="photo">
+        <div id="photoCarousel3" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <a class="carousel-control-prev" href="#photoCarousel3" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#photoCarousel3" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+              
+            <div class="carousel-item active">
+              <img src="https://w0.peakpx.com/wallpaper/221/507/HD-wallpaper-lewis-hamilton-cloud-sky.jpg" alt="Photo 3">
+            </div>
+            <div class="carousel-item">
+              <img src="https://cdn.wallpapersafari.com/82/79/He0mUT.jpg" alt="Photo 3-2">
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.redd.it/6e9pwl4pky761.jpg" alt="Photo 3-3">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
   <section id="video">
     <div class="video-container">
@@ -180,8 +405,128 @@
     </div>
   </section>
 
+<!-- New section for Soccer Cards -->
+<section id="soccer">
+    <div class="container mt-4">
+        <h2>Soccer</h2>
+        <div class="row">
+            <!-- First Bootstrap Card -->
+            <div class="col-md-4 scale-up glow-on-hover">
+                <div class="card">
+                    <img src="https://cdn.wallpapersafari.com/82/12/17QXx0.jpeg" class="card-img-top" alt="Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Manchester City FC</h5>
+                        <p class="card-text">Their home matches are played at the Etihad Stadium, and they are managed by top-class coaches, consistently competing at the highest levels of European football.</p>
+                    </div>
+                </div>
+            </div>
+
+<!-- Second Bootstrap Card -->
+<div class="col-md-4 scale-up glow-on-hover">
+    <div class="card">
+        <img src="https://www.pixelstalk.net/wp-content/uploads/images6/Real-Madrid-UEFA-Champions-League-2022-Wallpaper-Desktop.jpg" class="card-img-top" alt="Image 2">
+        <div class="card-body">
+            <h5 class="card-title">Real Madrid CF</h5>
+            <p class="card-text">Known for their rich history and numerous successes which includes numerous UEFA Champions League titles, Real Madrid boasts a storied rivalry with Barcelona. </p>
+        </div>
+    </div>
+</div>
+
+<!-- Third Bootstrap Card -->
+<div class="col-md-4 scale-up glow-on-hover">
+    <div class="card">
+        <img src="https://www.fcbarcelonanoticias.com/uploads/s1/13/64/54/9/sergio-busquets-levanta-el-titulo-de-liga-con-sus-companeros.jpeg" class="card-img-top" alt="Image 3">
+        <div class="card-body">
+            <h5 class="card-title">FC Barcelona</h5>
+            <p class="card-text">Famous for their commitment to beautiful, possession-based football, Barcelona has consistently been among the top clubs in Spain and Europe. </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="basketball">
+    <div class="container mt-4">
+      <h2 class="basketball-header">Basketball</h2>
+      <div class="row">
+        <!-- First Basketball Card -->
+        <div class="col-md-2 scale-up glow-on-hover">
+          <div class="card translucent-card">
+            <img src="https://a.espncdn.com/photo/2015/0420/mag_stephcurry001_coulter_sw_1600x1000.jpg" class="card-img-top" alt="Basketball Image 1">
+            <div class="card-body">
+              <h5 class="card-title">Here comes</h5>
+              <p class="card-text">Stephen Curry ... </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Basketball Card -->
+        <div class="col-md-2 scale-up glow-on-hover">
+            <div class="card translucent-card">
+              <img src="https://s.yimg.com/ny/api/res/1.2/b3JTwDgE79RWi6KLsjmkWg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQ0MA--/https://s.yimg.com/os/creatr-uploaded-images/2021-01/8abdaf10-61f9-11eb-96ee-2a514b0f0b59" class="card-img-top" alt="Basketball Image 1">
+              <div class="card-body">
+                <h5 class="card-title">With a</h5>
+                <p class="card-text">Step back ... </p>
+              </div>
+            </div>
+          </div>
+
+        <!-- Third Basketball Card -->
+      <div class="col-md-2 scale-up glow-on-hover">
+        <div class="card translucent-card taller-card">
+          <img src="https://media.istockphoto.com/id/170096587/photo/basketball.jpg?s=612x612&w=0&k=20&c=It1xaV5jYkoCOAlxaOwdmTbPHeIcXUZWECaPzriwh1w=" class="card-img-top" alt="Basketball Image 2">
+          <div class="card-body">
+            <h5 class="card-title">AND</h5>
+            <p class="card-text">... ...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Basketball Card -->
+      <div class="col-md-2 scale-up glow-on-hover">
+        <div class="card translucent-card taller-card">
+          <img src="https://media.istockphoto.com/id/170096587/photo/basketball.jpg?s=612x612&w=0&k=20&c=It1xaV5jYkoCOAlxaOwdmTbPHeIcXUZWECaPzriwh1w=" class="card-img-top" alt="Basketball Image 2">
+          <div class="card-body">
+            <h5 class="card-title">HE</h5>
+            <p class="card-text">... ...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fifth Basketball Card -->
+      <div class="col-md-2 scale-up glow-on-hover">
+        <div class="card translucent-card taller-card">
+          <img src="https://media.istockphoto.com/id/170096587/photo/basketball.jpg?s=612x612&w=0&k=20&c=It1xaV5jYkoCOAlxaOwdmTbPHeIcXUZWECaPzriwh1w=" class="card-img-top" alt="Basketball Image 2">
+          <div class="card-body">
+            <h5 class="card-title">SHOOTS</h5>
+            <p class="card-text">... ...</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Sixth Basketball Card -->
+      <div class="col-md-2 scale-up glow-on-hover">
+        <div class="card translucent-card taller-card">
+          <img src="https://media.istockphoto.com/id/120750848/vector/drawing-of-a-basketball-going-in-a-hoop.jpg?s=612x612&w=0&k=20&c=9UzNGU5-2xXO-PTW-lJQlBHPzSPUNdpSSyLCB0yNvA8=" class="card-img-top" alt="Basketball Image 3">
+          <div class="card-body">
+            <h5 class="card-title">AND</h5>
+            <p class="card-text">HE SCORES</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   <footer>
     <p>&copy; 2023 Cyrus Jit Young Tan. All rights reserved.</p>
   </footer>
+
+  <!-- Add Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
 </body>
 </html>
